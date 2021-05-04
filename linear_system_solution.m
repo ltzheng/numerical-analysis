@@ -31,12 +31,12 @@ jacobi_solution
 gs_solution
 
 x_range = 1:N;
-semilogy(x_range, jacobi_error, x_range, gs_error)
+semilogy(x_range, jacobi_error, '-', x_range, gs_error, '--')
 xlabel('Iteration')
 ylabel('Error')
 hold on
 
-omegas = [0.2, 0.5, 0.8, 1.2, 1.4, 1.5, 1.6, 1.7, 1.8];
+omegas = [0.2, 0.8, 1.2, 1.4, 1.6, 1.7];
 for i = 1:size(omegas, 2)
     [sor_solution, sor_error] = SOR(A, b, N, omegas(i));
     semilogy(x_range, sor_error)
