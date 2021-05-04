@@ -1,3 +1,5 @@
+clear, clc
+
 SIZE = 10;
 
 A = 2 * eye(SIZE);
