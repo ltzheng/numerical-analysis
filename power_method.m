@@ -4,7 +4,7 @@ clear, clc
 % A = -A;
 A = [222 580 584 786; -82 -221 -208 -288; 37 98 101 132; -30 -82 -88 -109];
 
-tolerance = 1e-12;
+tolerance = 1e-15;
 N = 500;
 [lambda, q_new_bar] = power_m(A, N, tolerance)
 

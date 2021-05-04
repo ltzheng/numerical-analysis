@@ -7,7 +7,7 @@ g(x) = x - f(x) / f_prime(x);
 
 % initial settings
 x_0 = [-2.5, 0.5, 2.5];
-tolerance = 1e-12;
+tolerance = 1e-15;
 
 N = 300;
 
