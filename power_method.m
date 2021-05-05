@@ -34,8 +34,6 @@ function power_m(A, N, tolerance)
 
         % two opposite dominant eigenvalues
         if iter > 3
-            q_temp = A * q_new;
-            lambda1 = sqrt(q_temp(1) / q_old_bar(1))
             if (norm(q_old_bar_gap - q_old_bar, inf) < tolerance) ...,
                 && (norm(q_new_bar_gap - q_new_bar, inf) < tolerance)
                 fprintf('two opposite dominant eigenvalues');
