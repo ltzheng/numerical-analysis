@@ -27,7 +27,7 @@ gs_solution
 
 % plot Jacobi and Gauss-Seidel semilogy fig
 x_range = 1:N;
-semilogy(x_range, jacobi_error, '-', x_range, gs_error, '--')
+semilogy(x_range, jacobi_error, '-.', x_range, gs_error, '--')
 xlabel('Iteration')
 ylabel('Error')
 hold on
@@ -39,7 +39,13 @@ for i = 1:size(omegas, 2)
     semilogy(x_range, sor_error)
     legend_str{i} = ['\omega=' num2str(omegas(i))];
 end
-legend(['Jacobi', 'Gauss-Seidel', legend_str])
+legend(['Jacobi', 'Gauss-Seidel', legend_str]) 
+annotation('textarrow',[0.5,0.5],[0.88,0.82],'String','\omega=0.2')  
+annotation('textarrow',[0.8,0.8],[0.2,0.47],'String','\omega=0.8')  
+annotation('textarrow',[0.27,0.27],[0.2,0.38],'String','\omega=1.7')  
+annotation('textarrow',[0.36,0.36],[0.2,0.35],'String','\omega=1.4')  
+annotation('textarrow',[0.18,0.2],[0.2,0.5],'String','\omega=1.6')  
+annotation('textarrow',[0.5,0.5],[0.2,0.38],'String','\omega=1.2')
 grid on
 
 % Jacobi method
