@@ -14,7 +14,7 @@ function error = newton(n)
     % define function
     f = @(x) 1./(1+25*x.^2);
     all_x = zeros(1, n+1);
-    for i = 1:n+1
+    for i = 1:n+1  % chebyshev
         all_x(i) = cos((i-1)*pi/n);
     end
     % table of difference quotient

@@ -15,7 +15,7 @@ function error = newton(n)
     % define function
     f = @(x) 1./(1+25*x.^2);
     p = randperm(n+1);
-    for i = 1:n+1
+    for i = 1:n+1  % chebyshev
         all_x(i) = cos((p(i)-1)*pi/n);
     end
     % table of difference quotient
