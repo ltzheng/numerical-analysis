@@ -13,9 +13,6 @@ ylabel('Max error')
 function error = cubic(n)
     % define function
     f = @(x) sin(4*(x.^2)) + sin(4*x).^2;
-    % boundary conditions
-    m_0 = 0;
-    m_n = 0;
     % cubic spline
     all_x = linspace(-1,1,n+1);
     y = f(all_x);
@@ -25,9 +22,15 @@ function error = cubic(n)
     lambda = h(2:n)./(h(1:n-1) + h(2:n));
     mu = 1.-lambda;
     T = diag([mu 1], -1)+diag(2*ones(n+1, 1))...
-        +diag([1 lambda], 1);
-    d_0 = 6/h(1)*(delta(1)-m_0);
-    d_n = 6/h(n)*(m_n-delta(n));
+    +diag([0 lambda], 1);
+    T(1, n+1) = -1;
+    T(n+1, 1) = h(1)/6;
+    T(n+1, 2) = h(1)/3;
+    T(n+1, n) = h(n)/3;
+    T(n+1, n+1) = h(n)/6;
+    % boundary conditions
+    d_0 = 0;
+    d_n = delta(n)-delta(1);
     M = T\[d_0 d d_n]';
     % compute error
     test_points = linspace(-1,1,2000);
