@@ -5,7 +5,7 @@ errors = zeros(1, size(n_s, 2));
 for i = 1:size(n_s, 2)
     errors(i) = max(cubic(n_s(i)));
 end
-% draw semilogy
+% draw loglog
 loglog(n_s, errors)
 xlabel('n')
 ylabel('Max error')

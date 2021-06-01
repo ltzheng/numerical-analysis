@@ -1,5 +1,6 @@
 clear, clc
 format long
+rng(22);
 n_s = [2^2, 2^3, 2^4, 2^5, 2^6, 2^7];% num of points
 errors = zeros(1, size(n_s, 2));
 for i = 1:size(n_s, 2)
@@ -13,9 +14,9 @@ ylabel('Max error')
 function error = newton(n)
     % define function
     f = @(x) 1./(1+25*x.^2);
-    all_x = zeros(1, n+1);
+    p = randperm(n+1);
     for i = 1:n+1
-        all_x(i) = cos((i-1)*pi/n);
+        all_x(i) = cos((p(i)-1)*pi/n);
     end
     % table of difference quotient
     g = f(all_x);
