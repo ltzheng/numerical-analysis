@@ -11,16 +11,17 @@ delta = (y(2:n+1)-y(1:n))./h;
 d = 6./(h(1:n-1) + h(2:n)).*(delta(2:n)-delta(1:n-1));
 lambda = h(2:n)./(h(1:n-1) + h(2:n));
 mu = 1.-lambda;
-T = diag([mu 1], -1)+diag(2*ones(n+1, 1))...
+T = diag([mu 0], -1)+diag(2*ones(n+1, 1))...
     +diag([0 lambda], 1);
+T(1, 1) = 1;
 T(1, n+1) = -1;
-T(n+1, 1) = h(1)/6;
-T(n+1, 2) = h(1)/3;
-T(n+1, n) = h(n)/3;
-T(n+1, n+1) = h(n)/6;
+T(2, 1) = 0;
+T(2, n+1) = mu(1);
+T(n+1, 2) = h(1)/(h(1)+h(n));
+T(n+1, n) = 1-T(n+1, 2);
 % boundary conditions
 d_0 = 0;
-d_n = delta(n)-delta(1);
+d_n = 6*(delta(1)-delta(n))/(h(1)+h(n));
 M = T\[d_0 d d_n]';
 % compute error
 test_points = linspace(-1,1,2000);
