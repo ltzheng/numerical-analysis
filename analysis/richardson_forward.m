@@ -15,7 +15,7 @@ xlabel('iter')
 ylabel('error')
 [min_err, ind] = min(err);
 grad = Richardson(ind);
-fprintf(['Gradient\t\terror\t\tInitial h\titer.\n']);
+fprintf(['Diff\t\terror\t\tInitial h\titer.\n']);
 fprintf('%.20f\t%d\t%d\t%d\t\n', grad, min_err, h, ind);
 
 function N_j = N(j, h)

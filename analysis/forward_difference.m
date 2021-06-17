@@ -10,3 +10,7 @@ err = abs(difference-f_prime(val));
 loglog(h, err)
 xlabel('h')
 ylabel('error')
+[min_err, ind] = min(err);
+grad = difference(ind);
+fprintf(['Diff\n']);
+fprintf('%.20f\n', grad);
