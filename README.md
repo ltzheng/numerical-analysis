@@ -1,1 +1,7 @@
-# numerical-analysis-ustc
+# numerical-method-ustc
+
+## Numerical Linear Algebra
+
+## Interpolation
+
+## Numerical Analysis
