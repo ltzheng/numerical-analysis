@@ -1,34 +1,43 @@
-# Numerical Methods
+# Numerical Analysis
 
-The assignments for course *Numerical Methods (2021 Spring)* in University of Science and Technology of China (USTC).
+The assignments for course *Numerical Methods* at University of Science and Technology of China (USTC).
 
 All codes are written in Matlab.
 
 ## Contents
 
-### Numerical Linear Algebra
+### Iterative Techniques in Matrix Algebra
 
-- Solving linear systems
-  - Jacobi method
-  - Gauss-Seidel method
-  - SOR method
-  - and their sparse optimization
-- Newton method 
-  - root finding for equations
-- Power method
-  - find (1 or 2) absolutely max eigenvalues and eigenvectors
-  - find closest eigenvalues and eigenvectors by inversing and shifting
+1) Solving Linear Systems
 
-### Interpolation
+- Jacobi method
+- Gauss-Seidel method
+- Successive over-relaxation (SOR) method
+- and their sparse optimization
+
+2) Solutions of Equations in One Variable
+
+- Newton's method 
+
+3) Approximating Eigenvalues
+
+- Power method: find (i) 1 or 2 absolutely max or (ii) closest eigenvalues and eigenvectors by **inversing** and **shifting**.
+
+### Interpolation and Polynomial Approximation
 
 - Cubic spline interpolation
 - Newton interpolation
 - Lagrange interpolation
 - Least squares method
 
-### Numerical Analysis
+### Mathematical Analysis
 
-- Forward difference
-  - Richardson extrapolation
-- Compound trapezoid method
-- Linear multistep method
+1) Numerical Differentiation and Integration
+
+- Forward differentiation
+- Richardson's extrapolation
+- Composite trapezoidal method
+
+2) Initial-Value Problems for Ordinary Differential Equations
+
+- Multistep method
